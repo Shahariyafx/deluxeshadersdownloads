@@ -1,48 +1,167 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Downloads</title>
-  <link rel="stylesheet" href="style.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      min-height: 100%;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #080b11;
+      color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 620px;
+      text-align: center;
+    }
+
+    .site-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 58px;
+      margin-bottom: 28px;
+      padding: 16px 20px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.05);
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .site-button:hover {
+      background: rgba(255,255,255,0.09);
+      border-color: rgba(90,160,255,0.5);
+      transform: translateY(-2px);
+    }
+
+    h1 {
+      font-size: 38px;
+      font-weight: 700;
+      margin-bottom: 26px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .download-button {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      min-height: 62px;
+      padding: 0 20px;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.045);
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .download-button:hover {
+      background: rgba(255,255,255,0.085);
+      border-color: rgba(90,160,255,0.5);
+      transform: translateY(-2px);
+    }
+
+    .arrow {
+      font-size: 22px;
+      opacity: 0.75;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 14px;
+      }
+
+      h1 {
+        font-size: 30px;
+        margin-bottom: 22px;
+      }
+
+      .site-button {
+        min-height: 54px;
+        font-size: 15px;
+        margin-bottom: 22px;
+      }
+
+      .download-button {
+        min-height: 58px;
+        padding: 0 16px;
+        font-size: 15px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-  <main class="downloads-page">
-    <section class="downloads-box">
+  <div class="container">
 
-      <a href="https://frojx.blogspot.com" class="home-button" target="_blank" rel="noopener">
-        FROJX Website
+    <a
+      class="site-button"
+      href="https://frojx.blogspot.com"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      FROJX Website
+    </a>
+
+    <h1>Downloads</h1>
+
+    <div class="buttons">
+
+      <a class="download-button" href="#">
+        <span>Vibraint Visual</span>
+        <span class="arrow">→</span>
       </a>
 
-      <h1>Downloads</h1>
+      <a class="download-button" href="#">
+        <span>Java Shaders</span>
+        <span class="arrow">→</span>
+      </a>
 
-      <div class="download-list">
+      <a class="download-button" href="#">
+        <span>Renderdragon Shaders</span>
+        <span class="arrow">→</span>
+      </a>
 
-        <a href="#" class="download-button">
-          <span>Vibraint Visual</span>
-          <span class="arrow">→</span>
-        </a>
+      <a class="download-button" href="#">
+        <span>Normal Shaders</span>
+        <span class="arrow">→</span>
+      </a>
 
-        <a href="#" class="download-button">
-          <span>Java Shaders</span>
-          <span class="arrow">→</span>
-        </a>
+    </div>
 
-        <a href="#" class="download-button">
-          <span>Renderdragon Shaders</span>
-          <span class="arrow">→</span>
-        </a>
-
-        <a href="#" class="download-button">
-          <span>Normal Shaders</span>
-          <span class="arrow">→</span>
-        </a>
-
-      </div>
-
-    </section>
-  </main>
+  </div>
 
 </body>
 </html>
