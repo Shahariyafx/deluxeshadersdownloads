@@ -1,1 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(70, 110, 255, 0.12), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(0, 190, 255, 0.08), transparent 35%),
+    #080b11;
+  color: #ffffff;
+}
+
+.downloads-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 18px;
+}
+
+.downloads-box {
+  width: 100%;
+  max-width: 650px;
+  padding: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 20px;
+  background: rgba(14, 18, 27, 0.82);
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.downloads-box h1 {
+  text-align: center;
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 28px;
+}
+
+.download-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.download-button {
+  width: 100%;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: rgba(255, 255, 255, 0.045);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.download-button:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(80, 150, 255, 0.45);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+}
+
+.download-button:active {
+  transform: translateY(0);
+}
+
+.arrow {
+  font-size: 22px;
+  font-weight: 400;
+  opacity: 0.75;
+}
+
+@media (max-width: 600px) {
+  .downloads-page {
+    padding: 18px 12px;
+  }
+
+  .downloads-box {
+    padding: 24px 16px;
+    border-radius: 16px;
+  }
+
+  .downloads-box h1 {
+    font-size: 28px;
+    margin-bottom: 22px;
+  }
+
+  .download-button {
+    min-height: 58px;
+    padding: 0 16px;
+    font-size: 15px;
+    border-radius: 12px;
+  }
+
+  .arrow {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 380px) {
+  .downloads-box {
+    padding: 20px 12px;
+  }
+
+  .downloads-box h1 {
+    font-size: 25px;
+  }
+
+  .download-button {
+    font-size: 14px;
+    min-height: 54px;
+  }
+}
