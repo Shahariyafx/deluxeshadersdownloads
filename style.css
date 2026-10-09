@@ -14,81 +14,55 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   font-family: Arial, Helvetica, sans-serif;
-  background: #020713;
-  color: #ffffff;
+  color: white;
+  background: #020814;
 }
 
-/* Moving image background */
 .background {
   position: fixed;
-  inset: -10%;
-  z-index: -5;
+  inset: -8%;
+  z-index: -2;
 
-  background-image: url("https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=2400&q=90");
+  background-image: url("https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=2400&q=90");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
-  animation: backgroundMove 18s ease-in-out infinite alternate;
-  transform: scale(1);
+  animation: moveBackground 20s ease-in-out infinite alternate;
 }
 
-@keyframes backgroundMove {
+@keyframes moveBackground {
   0% {
     transform: scale(1);
     background-position: 50% 50%;
   }
 
-  50% {
-    transform: scale(1.06);
-    background-position: 53% 47%;
-  }
-
   100% {
-    transform: scale(1.12);
-    background-position: 47% 53%;
+    transform: scale(1.1);
+    background-position: 53% 47%;
   }
 }
 
-/* Dark blue overlay */
-.background-overlay {
+.overlay {
   position: fixed;
   inset: 0;
-  z-index: -4;
-  pointer-events: none;
+  z-index: -1;
 
   background:
     radial-gradient(
       circle at 50% 15%,
-      rgba(0, 145, 255, 0.28),
+      rgba(0, 145, 255, 0.25),
       transparent 35%
     ),
     radial-gradient(
-      circle at 15% 85%,
-      rgba(0, 80, 255, 0.20),
-      transparent 32%
-    ),
-    radial-gradient(
-      circle at 90% 75%,
-      rgba(0, 175, 255, 0.18),
+      circle at 10% 90%,
+      rgba(0, 90, 255, 0.18),
       transparent 30%
     ),
     linear-gradient(
-      rgba(1, 7, 18, 0.58),
-      rgba(1, 6, 17, 0.78)
+      rgba(0, 5, 15, 0.48),
+      rgba(0, 7, 20, 0.78)
     );
-
-  animation: overlayPulse 6s ease-in-out infinite alternate;
-}
-
-@keyframes overlayPulse {
-  from {
-    opacity: 0.78;
-  }
-
-  to {
-    opacity: 1;
-  }
 }
 
 .page {
@@ -99,29 +73,28 @@ body {
   justify-content: center;
   align-items: center;
 
-  padding: 30px 16px;
+  padding: 25px 15px;
 }
 
-.downloads-card {
+.card {
   width: 100%;
-  max-width: 650px;
+  max-width: 620px;
 
-  padding: 38px 28px;
+  padding: 34px 26px;
 
   border-radius: 24px;
 
-  background: rgba(2, 10, 25, 0.70);
+  background: rgba(3, 12, 28, 0.72);
 
   border: 1px solid rgba(0, 153, 255, 0.35);
 
-  box-shadow:
-    0 0 20px rgba(0, 119, 255, 0.12),
-    0 0 60px rgba(0, 119, 255, 0.12),
-    0 0 120px rgba(0, 90, 255, 0.05),
-    inset 0 0 30px rgba(0, 130, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  box-shadow:
+    0 0 20px rgba(0, 120, 255, 0.12),
+    0 0 60px rgba(0, 110, 255, 0.08),
+    inset 0 0 25px rgba(0, 140, 255, 0.04);
 }
 
 h1 {
@@ -129,168 +102,123 @@ h1 {
 
   font-size: 42px;
   font-weight: 800;
-  letter-spacing: -0.5px;
-
-  color: #ffffff;
 
   text-shadow:
-    0 0 8px rgba(30, 155, 255, 0.85),
-    0 0 20px rgba(0, 120, 255, 0.65),
-    0 0 45px rgba(0, 90, 255, 0.35);
+    0 0 8px rgba(0, 155, 255, 0.8),
+    0 0 20px rgba(0, 120, 255, 0.5),
+    0 0 45px rgba(0, 100, 255, 0.25);
 }
 
-.title-glow {
-  width: 85px;
+.line {
+  width: 80px;
   height: 3px;
 
-  margin: 14px auto 30px;
+  margin: 14px auto 28px;
 
-  border-radius: 20px;
+  border-radius: 10px;
 
-  background: #1497ff;
+  background: #1597ff;
 
   box-shadow:
-    0 0 8px #1497ff,
-    0 0 18px #1497ff,
-    0 0 35px rgba(20, 151, 255, 0.8);
+    0 0 8px #1597ff,
+    0 0 18px #1597ff,
+    0 0 30px rgba(21, 151, 255, 0.7);
 }
 
-.download-list {
+.buttons {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 14px;
 }
 
-.download-btn {
+.download {
   position: relative;
 
   width: 100%;
-  min-height: 66px;
+  min-height: 63px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  padding: 0 21px;
+  padding: 0 20px;
 
-  border-radius: 15px;
-
+  color: white;
   text-decoration: none;
-  color: #ffffff;
+
+  border-radius: 14px;
 
   background:
     linear-gradient(
       135deg,
-      rgba(8, 48, 95, 0.88),
-      rgba(2, 18, 39, 0.94)
+      rgba(7, 51, 103, 0.88),
+      rgba(2, 18, 38, 0.95)
     );
 
-  border: 1px solid rgba(0, 151, 255, 0.40);
+  border: 1px solid rgba(0, 153, 255, 0.42);
 
   box-shadow:
-    0 0 10px rgba(0, 136, 255, 0.16),
-    inset 0 0 15px rgba(0, 130, 255, 0.04);
-
-  overflow: hidden;
+    0 0 10px rgba(0, 133, 255, 0.12),
+    inset 0 0 14px rgba(0, 125, 255, 0.04);
 
   transition:
-    transform 0.25s ease,
-    border-color 0.25s ease,
-    box-shadow 0.25s ease,
-    background 0.25s ease;
+    0.25s ease;
+
+  overflow: hidden;
 }
 
-.download-btn::before {
-  content: "";
-
-  position: absolute;
-  top: 0;
-  left: -100%;
-
-  width: 70%;
-  height: 100%;
-
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(90, 190, 255, 0.18),
-    transparent
-  );
-
-  transform: skewX(-20deg);
-
-  transition: left 0.55s ease;
-
-  pointer-events: none;
-}
-
-.download-btn:hover::before {
-  left: 140%;
-}
-
-.download-btn:hover {
+.download:hover {
   transform: translateY(-3px);
 
-  border-color: rgba(40, 175, 255, 0.95);
+  border-color: rgba(45, 178, 255, 0.95);
 
   background:
     linear-gradient(
       135deg,
-      rgba(7, 63, 125, 0.96),
-      rgba(2, 24, 53, 0.98)
+      rgba(7, 69, 140, 0.96),
+      rgba(2, 25, 54, 0.98)
     );
 
   box-shadow:
-    0 0 12px rgba(0, 153, 255, 0.45),
-    0 0 28px rgba(0, 123, 255, 0.25),
-    0 0 50px rgba(0, 105, 255, 0.10),
-    inset 0 0 20px rgba(0, 145, 255, 0.08);
+    0 0 12px rgba(0, 150, 255, 0.45),
+    0 0 28px rgba(0, 125, 255, 0.22),
+    inset 0 0 20px rgba(0, 150, 255, 0.06);
 }
 
-.download-btn:active {
-  transform: translateY(-1px);
-}
-
-.download-btn span:first-child {
+.download span:first-child {
   font-size: 16px;
   font-weight: 700;
-
-  text-shadow:
-    0 0 8px rgba(0, 145, 255, 0.30);
 }
 
 .arrow {
   font-size: 23px;
-  font-weight: 400;
-
-  color: #55b8ff;
+  color: #51b8ff;
 
   text-shadow:
-    0 0 8px #1394ff,
-    0 0 18px rgba(19, 148, 255, 0.8);
+    0 0 8px #1497ff,
+    0 0 18px rgba(20, 151, 255, 0.8);
 
   transition: transform 0.25s ease;
 }
 
-.download-btn:hover .arrow {
-  transform: translateX(6px);
+.download:hover .arrow {
+  transform: translateX(5px);
 }
 
-.home-btn {
+.home {
   width: 100%;
-  min-height: 62px;
+  min-height: 60px;
 
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
-  margin-top: 27px;
-  padding: 0 20px;
+  margin-top: 24px;
 
-  border-radius: 15px;
+  border-radius: 14px;
 
+  color: white;
   text-decoration: none;
-  color: #ffffff;
 
   font-size: 16px;
   font-weight: 700;
@@ -298,52 +226,36 @@ h1 {
   background:
     linear-gradient(
       135deg,
-      rgba(0, 112, 235, 0.45),
-      rgba(0, 45, 95, 0.58)
+      rgba(0, 116, 245, 0.45),
+      rgba(0, 47, 100, 0.58)
     );
 
-  border: 1px solid rgba(0, 159, 255, 0.50);
+  border: 1px solid rgba(0, 160, 255, 0.52);
 
   box-shadow:
-    0 0 12px rgba(0, 145, 255, 0.20),
-    0 0 30px rgba(0, 110, 255, 0.10);
+    0 0 12px rgba(0, 145, 255, 0.2),
+    0 0 30px rgba(0, 110, 255, 0.1);
 
-  transition:
-    transform 0.25s ease,
-    border-color 0.25s ease,
-    background 0.25s ease,
-    box-shadow 0.25s ease;
+  transition: 0.25s ease;
 }
 
-.home-btn:hover {
+.home:hover {
   transform: translateY(-3px);
 
   border-color: rgba(70, 190, 255, 1);
 
-  background:
-    linear-gradient(
-      135deg,
-      rgba(0, 135, 255, 0.62),
-      rgba(0, 54, 115, 0.70)
-    );
-
   box-shadow:
-    0 0 14px rgba(0, 153, 255, 0.48),
-    0 0 35px rgba(0, 120, 255, 0.25),
-    inset 0 0 18px rgba(0, 145, 255, 0.08);
-}
-
-.home-btn:active {
-  transform: translateY(-1px);
+    0 0 15px rgba(0, 155, 255, 0.5),
+    0 0 35px rgba(0, 120, 255, 0.25);
 }
 
 @media (max-width: 650px) {
   .page {
-    padding: 18px 12px;
+    padding: 16px 12px;
   }
 
-  .downloads-card {
-    padding: 28px 16px;
+  .card {
+    padding: 27px 15px;
     border-radius: 20px;
   }
 
@@ -351,23 +263,17 @@ h1 {
     font-size: 34px;
   }
 
-  .title-glow {
-    margin-bottom: 24px;
+  .download {
+    min-height: 59px;
+    padding: 0 16px;
   }
 
-  .download-btn {
-    min-height: 60px;
-    padding: 0 17px;
-  }
-
-  .download-btn span:first-child {
+  .download span:first-child {
     font-size: 15px;
   }
 
-  .home-btn {
-    min-height: 58px;
-    margin-top: 22px;
-    font-size: 15px;
+  .home {
+    min-height: 57px;
   }
 }
 
@@ -376,11 +282,7 @@ h1 {
     font-size: 30px;
   }
 
-  .downloads-card {
-    padding: 24px 12px;
-  }
-
-  .download-btn {
-    min-height: 56px;
+  .card {
+    padding: 23px 12px;
   }
 }
